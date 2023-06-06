@@ -1,4 +1,4 @@
-let yearOfBirth = prompt('Введіть ваш рік народження');
+let yearOfBirth = Number(prompt('Введіть ваш рік народження'));
 if(!yearOfBirth) {
   alert('Шкода що Ви не захотіли ввести свій рік народження');
   yearOfBirth = '????';
@@ -48,4 +48,8 @@ switch(favSport) {
     sportMessage = `Твій улюблений спорт ${favSport}.`;
 }
 
-alert(`Ти ${yearOfBirth} Року народження. ${cityMessage} ${sportMessage}`);
+const today = new Date();
+const currentYear = today.getFullYear();
+const age = currentYear - yearOfBirth;
+
+alert(`Тобі ${age} років. ${cityMessage} ${sportMessage}`);
